@@ -3,10 +3,10 @@
 
    
 <div class="product-manage">
-	<button class="add-product-btn">
+	<a href="products-add" class="add-product-btn">
 		<i class="bi bi-plus"></i>
 		Thêm sản phẩm
-	</button> 
+	</a> 
 	<table class="product-table">
 		<thead> 
 			<tr>
@@ -29,7 +29,7 @@
 				<td>$10.00</td>
 				<td>Description of Product 1</td>
 				<td>
-					<button class="table-btn table-btn-edit">Sữa</button>
+					<a href="/products-edit" class="table-btn table-btn-edit">Sữa</a>
 				</td>
 				<td>
 					<button class="table-btn table-btn-close">Xóa</button>

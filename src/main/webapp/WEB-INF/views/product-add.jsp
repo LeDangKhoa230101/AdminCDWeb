@@ -4,7 +4,6 @@
 <div class="product-add">
 	<div class="product-add--header">
 		<h4>Thêm sản phẩm</h4> 
-		<button class="product-add-back--btn">Quay lại</button>
 	</div>
 						
 	<form>

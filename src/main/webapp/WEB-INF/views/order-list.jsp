@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    
 <div class="order-manage">
 	<h4>Danh sách hóa đơn</h4> 
 	<table class="order-table">
@@ -26,7 +25,7 @@
 				<td>320302 VNĐ</td>
 				<td>Hoàn thành</td>
 				<td>
-					<button class="table-btn table-btn-eye">Xem</button>
+					<a href="/orders-detail" class="table-btn table-btn-eye">Xem</a>
 				</td>
 				<td>
 					<button class="table-btn table-order-btn-close">Xóa</button>
