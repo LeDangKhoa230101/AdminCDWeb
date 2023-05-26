@@ -157,6 +157,11 @@
     background-color: #555de8;
     padding: 8px 12px;
     color: #fff;
+    text-decoration: none;
+}
+
+.add-product-btn:hover {
+	color: #fff;
 }
 
 .product-table {
@@ -190,6 +195,12 @@
 
 .table-btn.table-btn-edit {
 	background-color: #0b17ed;
+	text-decoration: none;
+}
+
+.table-btn.table-btn-edit:hover {
+	background-color: #0b17ed;
+	color: var(--white-color);
 }
 
 .table-btn.table-btn-close {
@@ -211,7 +222,6 @@
 	background-color: var(--white-color);
 	padding: 20px;
 	max-height: 638px;
-	display: none;
 }
 
 .product-edit--header {
@@ -232,6 +242,11 @@
     color: #ea3210;
     background-color: transparent;
     font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.product-edit-back--btn:hover {
+	color: #ea3210;
 }
 
 .product-edit-input {
@@ -284,7 +299,6 @@
 .product-add {
 	background-color: var(--white-color);
 	padding: 20px;
-	display: none;
 	max-height: 638px;
 }
 
@@ -306,6 +320,11 @@
     color: #ea3210;
     background-color: transparent;
     font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.product-add-back--btn:hover {
+	color: #ea3210;
 }
 
 /*
@@ -343,6 +362,11 @@
 
 .table-btn.table-btn-eye {
 	background-color: #0b17ed;
+	text-decoration: none;
+}
+
+.table-btn.table-btn-eye:hover {
+	color: #fff;
 }
 
 .table-order-btn-close {
@@ -357,7 +381,6 @@
 	background-color: var(--white-color);
 	padding: 20px;
 	max-height: 638px;
-	display: none;
 }
 
 .order-detail-input {

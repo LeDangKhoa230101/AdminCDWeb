@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-    
 <div class="product-edit">
 	<div class="product-edit--header">
 		<h4>Sửa sản phẩm</h4> 
-		<button class="product-edit-back--btn">Quay lại</button>
 	</div>
 	<form>
 		<div class="container">

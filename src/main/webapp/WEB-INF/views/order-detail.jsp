@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-    
 <div class="order-detail">
 	<div class="order-detail--header">
 		<h4>Chi tiết hóa đơn</h4> 
-		<button class="order-back-btn">Quay lại</button>
 	</div>
 												
 	<div class="container">

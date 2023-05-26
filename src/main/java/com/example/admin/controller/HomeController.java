@@ -10,4 +10,54 @@ public class HomeController {
 	public String homePage() {
 		return "index";
 	}
+	
+	@GetMapping("/products")
+	public String productsPage() {
+		return "products";
+	}
+	
+	@GetMapping("/products-edit")
+	public String productsEditPage() {
+		return "products-edit";
+	}
+	
+	@GetMapping("/products-add")
+	public String productsAddPage() {
+		return "products-add";
+	}
+	
+	@GetMapping("/orders")
+	public String ordersPage() {
+		return "orders";
+	}
+	
+	@GetMapping("/orders-detail")
+	public String ordersDetailPage() {
+		return "orders-detail";
+	}
+	
+	@GetMapping("/login")
+	public String loginPage() {
+		return "login-page";
+	}
+	
+	@GetMapping("/register")
+	public String registerPage() {
+		return "register-page";
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
