@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
    
 <div class="product-manage">
 	<a href="products-add" class="add-product-btn">
@@ -20,43 +20,34 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>1</td>
-				<td>Product 1 Product 1</td>
-				<td>
-					<img src="https://cdn.shopify.com/s/files/1/0719/3244/4977/products/mwdyzzepnza4hqeubzwu.png?v=1680023628&width=540" alt="Product 1">
-				</td>
-				<td>$10.00</td>
-				<td>Description of Product 1</td>
-				<td>
-					<a href="/products-edit" class="table-btn table-btn-edit">Sữa</a>
-				</td>
-				<td>
-					<button class="table-btn table-btn-close">Xóa</button>
-				</td>
+			<c:forEach items="${products}" var="product">
+				<tr>
+					<td>${product.productid}</td>
+					<td>${product.productName}</td>
+					<td>
+						<img src="${product.image}" alt="Product 1">
+					</td>
+					<td>${product.getPriceFormat()} VNĐ</td>
+					<td>${product.description}</td>
+					<td>
+						<a href="/products-edit/${product.productid}" class="table-btn table-btn-edit">Sữa</a>
+					</td>
+					<td>
+						<button class="table-btn table-btn-close">Xóa</button>
+					</td>
 				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
-							
-	<nav aria-label="...">
-		<ul class="pagination product-paginate">
-			<li class="page-item disabled">
-				<a class="page-link" href="#">Previous</a>
-			</li>
-			<li class="page-item active">
-				<a class="page-link" href="#">1</a>
-			</li>
-			<li class="page-item">
-				<a class="page-link" href="#">2</a>
-			</li>
-			<li class="page-item">
-				<a class="page-link" href="#">3</a>
-			</li>
-			<li class="page-item">
-				<a class="page-link" href="#">Next</a>
-			</li>
-		</ul>
-	</nav>
+				
+	<div>
+	    <c:if test="${currentPage > 0}">
+	      <a class="prev-btn" href="?page=${currentPage - 1}">Previous</a>
+	    </c:if>
+	    <c:if test="${currentPage < totalPages - 1}">
+	      <a class="next-btn" href="?page=${currentPage + 1}">Next</a>
+	    </c:if>
+  	</div>
 </div>		
 					
 					

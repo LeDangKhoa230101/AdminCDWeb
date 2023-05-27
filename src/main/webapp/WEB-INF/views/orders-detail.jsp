@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +41,13 @@
 				<img alt="logo-admin" src="/images/AdminLTELogo.png"> <span>Admin</span>
 			</div>
 			<div class="user-admin">
-				<img alt="logo-admin" src="/images/user2-160x160.jpg"> <span>Alex</span>
+				<img alt="logo-admin" src="/images/user2-160x160.jpg"> 
+				<c:if test="${user != null}">
+					<span>${user.lastName} ${user.firstName}</span>
+				</c:if>
+				<c:if test="${user == null}">
+					<span>Alex</span>
+				</c:if>
 			</div>
 
 			<!-- Tab items -->
@@ -54,12 +61,19 @@
 				<a href="/orders" style="text-decoration: none;color: #f5f5f5;" class="tab-item active">
 					Quản lý hóa đơn
 				</a>
-				<a href="/login" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
-					Đăng nhập
-				</a>
-				<a href="/register" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
-					Đăng ký
-				</a>
+				<c:if test="${user == null}">
+					<a href="/login" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
+						Đăng nhập
+					</a>
+					<a href="/register" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
+						Đăng ký
+					</a>
+				</c:if>
+				<c:if test="${user != null}">
+					<a href="/logout" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
+						Đăng xuất
+					</a>
+				</c:if>
 			</div>
 		</div> 
 
