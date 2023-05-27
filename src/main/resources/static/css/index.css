@@ -1,5 +1,16 @@
 @charset "UTF-8";
 
+
+.prev-btn {
+	margin-right: 16px;
+}
+
+.prev-btn,
+.next-btn {
+	text-decoration: none;
+    font-size: 1.4rem;
+}
+
 #admin {
 	display: flex;
 }

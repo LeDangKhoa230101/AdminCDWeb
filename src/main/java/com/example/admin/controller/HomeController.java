@@ -1,29 +1,34 @@
 package com.example.admin.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.admin.model.Orders;
+import com.example.admin.model.User;
+import com.example.admin.repository.OrdersRepository;
+import com.example.admin.repository.UserRepository;
 
 @Controller
 public class HomeController {
 	
+	@Autowired
+	private OrdersRepository ordersRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
+	
 	@GetMapping("/")
-	public String homePage() {
+	public String showOrderAll(Model model) {
+		List<Orders> orders = ordersRepository.findAll();
+		model.addAttribute("orders", orders);
+		
+		List<User> users = userRepository.findAll();
+		model.addAttribute("users", users);
 		return "index";
-	}
-	
-	@GetMapping("/products")
-	public String productsPage() {
-		return "products";
-	}
-	
-	@GetMapping("/products-edit")
-	public String productsEditPage() {
-		return "products-edit";
-	}
-	
-	@GetMapping("/products-add")
-	public String productsAddPage() {
-		return "products-add";
 	}
 	
 	@GetMapping("/orders")
@@ -34,16 +39,6 @@ public class HomeController {
 	@GetMapping("/orders-detail")
 	public String ordersDetailPage() {
 		return "orders-detail";
-	}
-	
-	@GetMapping("/login")
-	public String loginPage() {
-		return "login-page";
-	}
-	
-	@GetMapping("/register")
-	public String registerPage() {
-		return "register-page";
 	}
 }
 

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,10 +38,17 @@
 		<!-- Sidebar -->
 		<div class="sidebar">
 			<div class="sidedbar-header">
-				<img alt="logo-admin" src="/images/AdminLTELogo.png"> <span>Admin</span>
+				<img alt="logo-admin" src="/images/AdminLTELogo.png"> 
+				<span>Admin</span>
 			</div>
 			<div class="user-admin">
-				<img alt="logo-admin" src="/images/user2-160x160.jpg"> <span>Alex</span>
+				<img alt="logo-admin" src="/images/user2-160x160.jpg"> 
+				<c:if test="${user != null}">
+					<span>${user.lastName} ${user.firstName}</span>
+				</c:if>
+				<c:if test="${user == null}">
+					<span>Alex</span>
+				</c:if>
 			</div>
 
 			<!-- Tab items -->
@@ -54,12 +62,19 @@
 				<a href="/orders" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
 					Quản lý hóa đơn
 				</a>
-				<a href="/login" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
-					Đăng nhập
-				</a>
-				<a href="/register" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
-					Đăng ký
-				</a>
+				<c:if test="${user == null}">
+					<a href="/login" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
+						Đăng nhập
+					</a>
+					<a href="/register" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
+						Đăng ký
+					</a>
+				</c:if>
+				<c:if test="${user != null}">
+					<a href="/logout" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
+						Đăng xuất
+					</a>
+				</c:if>
 			</div>
 		</div> 
 
@@ -75,7 +90,7 @@
 							<div class="col-3 px-2">
 								<div class="dashboard-box" style="background-color: #17a2b8;">
 									<div>
-										<span>140</span>
+										<span>${orders.size()}</span>
 										<p>Đơn hàng</p>
 									</div>
 									<i class="bi bi-bag"></i>
@@ -93,7 +108,7 @@
 							<div class="col-3 px-2">
 								<div class="dashboard-box" style="background-color: #ffc107;">
 									<div>
-										<span>34</span>
+										<span>${users.size()}</span>
 										<p>Người đăng ký</p>
 									</div>
 									<i class="bi bi-person-plus-fill"></i>
@@ -102,7 +117,7 @@
 							<div class="col-3 px-2">
 								<div class="dashboard-box" style="background-color: #dc3545;">
 									<div>
-										<span>58</span>
+										<span>5</span>
 										<p>Khách truy cập</p>
 									</div>
 									<i class="bi bi-pie-chart-fill"></i>

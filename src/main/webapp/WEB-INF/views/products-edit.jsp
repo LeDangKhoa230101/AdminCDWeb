@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +41,13 @@
 				<img alt="logo-admin" src="/images/AdminLTELogo.png"> <span>Admin</span>
 			</div>
 			<div class="user-admin">
-				<img alt="logo-admin" src="/images/user2-160x160.jpg"> <span>Alex</span>
+				<img alt="logo-admin" src="/images/user2-160x160.jpg"> 
+				<c:if test="${user != null}">
+					<span>${user.lastName} ${user.firstName}</span>
+				</c:if>
+				<c:if test="${user == null}">
+					<span>Alex</span>
+				</c:if>
 			</div>
 
 			<!-- Tab items -->
@@ -54,12 +61,19 @@
 				<a href="/orders" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
 					Quản lý hóa đơn
 				</a>
-				<a href="/login" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
-					Đăng nhập
-				</a>
-				<a href="/register" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
-					Đăng ký
-				</a>
+				<c:if test="${user == null}">
+					<a href="/login" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
+						Đăng nhập
+					</a>
+					<a href="/register" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
+						Đăng ký
+					</a>
+				</c:if>
+				<c:if test="${user != null}">
+					<a href="/logout" style="text-decoration: none;color: #f5f5f5;" class="tab-item">
+						Đăng xuất
+					</a>
+				</c:if>
 			</div>
 		</div>
 
@@ -78,22 +92,7 @@
 
 	</div>
 
-<!-- <script type="text/javascript">
-	// tab ui
-	const tabs = document.querySelectorAll(".tab-item");
-	const panes = document.querySelectorAll(".tab-pane");
-
-	tabs.forEach((tab, index) => {
-		const pane = panes[index];
-		
-		tab.onclick = function() {
-			$('.tab-item.active').removeClass('active');
-			$('.tab-pane.active').removeClass('active');
-			
-			this.classList.add('active');
-			pane.classList.add('active');
-		}
-	})
+<script type="text/javascript">
 	
 	// choose file image edit
 	const imageInput = document.getElementById("avatar-input");
@@ -112,67 +111,7 @@
 		reader.readAsDataURL(this.files[0]);
 	});
 	
-
-	// choose file image add
-	const imageAddInput = document.getElementById("image-add-input");
-	const imageAdd = document.getElementById("image-add");
-	
-	function chooseFileAdd() {
-		imageAddInput.click();
-	}
-	
-	imageAddInput.addEventListener("change", function() {
-		var reader = new FileReader();
-		
-		reader.onload = function(e) {
-			imageAdd.src = e.target.result;
-		}
-		reader.readAsDataURL(this.files[0]);
-	});
-	
-	// hiển thị trang edit và add product
-	const productManage = $(".product-manage");
-	const productEdit = $(".product-edit");
-	const productAdd = $(".product-add");
-	const editBackBtn = $(".product-edit-back--btn");
-	const addBackBtn = $(".product-add-back--btn");
-	
-	$(document).ready(function() {
-		$(".table-btn-edit").click(function() {
-			productManage.css("display", "none");
-			productEdit.css("display", "block");
-		})
-		
-		editBackBtn.click(function() {
-			productManage.css("display", "block");
-			productEdit.css("display", "none");
-		})
-		
-		$(".add-product-btn").click(function() {
-			productManage.css("display", "none");
-			productAdd.css("display", "block");
-		})
-		
-		addBackBtn.click(function() {
-			productManage.css("display", "block");
-			productAdd.css("display", "none");
-		})
-	})
-	
-	// display order detail
-	$(document).ready(function() {
-		$(".table-btn-eye").click(function() {
-			$(".order-manage").css("display", "none");
-			$(".order-detail").css("display", "block");
-		})
-		
-		$(".order-back-btn").click(function() {
-			$(".order-manage").css("display", "block");
-			$(".order-detail").css("display", "none");
-		})
-	})
-	
-</script> -->
+</script>
 
 </body>
 </html>
