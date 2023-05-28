@@ -27,9 +27,7 @@
 			</div>
 			<div class="row">
 				<div class="col-12">
-					<textarea rows="5" name="description" class="product-edit-input" cols="2" placeholder="Mô tả sản phẩm">
-						${product.description}
-					</textarea>
+					<textarea rows="5" name="description" class="product-edit-input" cols="2" placeholder="Mô tả sản phẩm">${product.description}</textarea>
 				</div>
 			</div>
 			<div class="row">

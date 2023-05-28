@@ -30,16 +30,6 @@ public class HomeController {
 		model.addAttribute("users", users);
 		return "index";
 	}
-	
-	@GetMapping("/orders")
-	public String ordersPage() {
-		return "orders";
-	}
-	
-	@GetMapping("/orders-detail")
-	public String ordersDetailPage() {
-		return "orders-detail";
-	}
 }
 
 

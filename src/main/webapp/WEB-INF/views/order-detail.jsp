@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="order-detail">
 	<div class="order-detail--header">
 		<h4>Chi tiết hóa đơn</h4> 
@@ -9,9 +9,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 order-detail--col-1">
-				<span>ID hóa đơn: 1</span>
-				<span>Ngày mua: 3/2/2002</span>
-				<span>Trạng thái: Hoàn thành</span>
+				<span>ID hóa đơn: ${order.orderid}</span>
+				<span>Ngày mua: ${order.purchaseDate}</span>
+				<span>Trạng thái: ${order.orderStatus}</span>
 			</div>
 		</div>
 		<div class="row">
@@ -33,12 +33,12 @@
 		</div>
 		<div class="row">
 			<div class="col-6">
-				<textarea class="product-edit-input" rows="5" cols="2" placeholder="Địa chỉ giao hàng">287328 Nguyễn Huệ</textarea>
+				<textarea class="product-edit-input" rows="5" cols="2" placeholder="Địa chỉ giao hàng">${order.deliveryAddress}</textarea>
 			</div>
 			<div class="col-6">
 				<div class="order-detail-total">
 					<span style="font-weight: 500">Tổng tiền:</span>	
-					<span>874387348 VNĐ</span>											
+					<span>${order.tongtien} VNĐ</span>											
 				</div>
 			</div>
 		</div>
