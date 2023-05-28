@@ -81,7 +81,7 @@
 		<div class="content">
 			<!-- Tab content -->
 			<div class="tab-content">
-				<div class="tab-pane active"></div>
+				<div class="tab-pane"></div>
 				<div class="tab-pane"></div>
 				<div class="tab-pane active">
 					<h2>Quản lý hóa đơn</h2>

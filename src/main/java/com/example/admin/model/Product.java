@@ -44,9 +44,6 @@ public class Product {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "cateid", nullable = false)
 	private Category category;
-
-	@OneToMany(mappedBy = "product")
-	private List<OrdersDetail> ordersDetails;
 	 
 	
 	public Product() {
@@ -120,15 +117,6 @@ public class Product {
 
 	public void setCategory(Category category) {
 		this.category = category;
-	}
-	
-	
-	public List<OrdersDetail> getOrdersDetails() {
-		return ordersDetails;
-	}
-
-	public void setOrdersDetails(List<OrdersDetail> ordersDetails) {
-		this.ordersDetails = ordersDetails;
 	}
 
 	public String getPriceFormat() {
