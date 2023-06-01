@@ -9,11 +9,8 @@
 	<form>
 		<div class="container">
 			<div class="row">
-				<div class="col-6">
+				<div class="col-12">
 					<input type="text" class="product-edit-input" placeholder="Tên sản phẩm"> 
-				</div>
-				<div class="col-6">
-					<input type="text" class="product-edit-input" placeholder="Danh mục sản phẩm">
 				</div>
 			</div>
 			<div class="row">
