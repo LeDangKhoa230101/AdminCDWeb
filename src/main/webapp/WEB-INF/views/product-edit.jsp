@@ -6,7 +6,7 @@
 	<div class="product-edit--header">
 		<h4>Sửa sản phẩm</h4> 
 	</div>
-	<form method="POST" enctype="multipart/form-data" action="/upload/product">
+	<form method="POST" action="/products-edit/${product.productid}">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
@@ -19,9 +19,9 @@
 						<div class="product-edit-form--img">
 							<img alt="image" id="avatar" src="${product.image}">
 						</div>
-						<input id="avatar-input" name="file" style="display: none;" type="file" accept=".jpg, .jpeg, .png">
+						<!-- <input id="avatar-input" name="file" style="display: none;" type="file" accept=".jpg, .jpeg, .png">
 						<button onclick="chooseFile()" class="product-edit-form--btn" type="button">Chọn ảnh</button>
-						<p class="dinhdang">Định dạng: .JPG, .JPEG, .PNG</p>
+						<p class="dinhdang">Định dạng: .JPG, .JPEG, .PNG</p> -->
 					</div>
 				</div>
 			</div>
